@@ -82,15 +82,20 @@ button:focus-visible {
   position: sticky;
   z-index: 20;
   top: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 16, 23, 0.9);
+  backdrop-filter: blur(20px);
+}
+
+.site-header-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: min(var(--content-width), calc(100% - 48px));
   height: 80px;
   margin-inline: auto;
-  border-bottom: 1px solid var(--line);
-  background: rgba(11, 16, 23, 0.9);
-  backdrop-filter: blur(20px);
 }
 
 .identity {
@@ -995,11 +1000,11 @@ button:focus-visible {
 
 @media (max-width: 680px) {
   .shell,
-  .site-header {
+  .site-header-inner {
     width: min(100% - 28px, var(--content-width));
   }
 
-  .site-header {
+  .site-header-inner {
     height: 68px;
   }
 
