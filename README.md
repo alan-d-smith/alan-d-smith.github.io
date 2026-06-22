@@ -39,3 +39,5 @@ git diff --check
 ## Deployment
 
 The repository is designed to be served directly from the root of the `main` branch with GitHub Pages. No build command or generated output directory is required.
+
+Static asset URLs in `index.html` include a deployment revision query. Update that revision whenever CSS or JavaScript changes so browsers cannot combine new markup with stale assets after a GitHub Pages deployment.
