@@ -32,7 +32,7 @@ Use local image files. The pages’ Content Security Policy blocks external reso
 
 This UK personal portfolio uses no analytics, cookies, browser storage or remote embeds. Fonts are served locally. Keep both privacy translations consistent with the site and with how enquiries are actually handled; review them before adding services or changing the operator. The company mailbox’s correspondence retention is described in [Latch’s privacy notice](https://latchlabs.app/privacy). The domain’s public MX record points to Google’s mail servers.
 
-Apply the published retention policy to portfolio messages: review and delete correspondence no later than 24 months after the last meaningful interaction, except records needed for a legal obligation or claim. Monitor the published email address for privacy requests. Keep the mailbox’s provider agreement and transfer safeguards current; publishing a notice does not configure or verify the email account.
+Apply the published retention policy to portfolio messages: review and delete correspondence no later than 24 months after the last meaningful interaction, except records needed for a legal obligation or claim. Monitor `privacy@latchlabs.app` for privacy requests and `legal@latchlabs.app` for legal correspondence. Keep the mailbox’s provider agreement and transfer safeguards current; publishing a notice does not configure or verify the email account.
 
 ## Quality checks
 
