@@ -1,3 +1,28 @@
+/* Self-hosted fonts: see assets/fonts/README.md for sources and licences. */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("assets/fonts/manrope-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/dm-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DM Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/dm-mono-latin-500-normal.woff2") format("woff2");
+}
+
 :root {
   --background: #0b1017;
   --background-raised: #0e151e;
@@ -962,6 +987,7 @@ button:focus-visible {
 
 .site-footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -977,6 +1003,58 @@ button:focus-visible {
 
 .site-footer a:hover {
   color: var(--accent-bright);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.legal-main {
+  max-width: 780px;
+  padding-block: 4rem 6rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.legal-main h1 {
+  margin-block: 0 1rem;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+}
+
+.legal-main h2 {
+  margin-top: 3rem;
+  font-size: 1.8rem;
+  scroll-margin-top: 100px;
+}
+
+.legal-main p,
+.legal-contact {
+  color: var(--muted);
+}
+
+.legal-contact {
+  font-style: normal;
+}
+
+.legal-main a {
+  color: var(--accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.legal-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.legal-languages [aria-current="page"] {
+  color: var(--text);
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {
