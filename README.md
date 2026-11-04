@@ -10,7 +10,7 @@ Personal portfolio for Alan Smith, built as a dependency-free static site for Gi
 - `script.js` handles image configuration, the project tile spotlight, and the footer year.
 - `portfolio.config.js` provides a single place to update project imagery.
 - `assets/` contains locally hosted project images.
-- `assets/logos/` contains locally hosted achievement logos.
+- `assets/logos/` contains locally hosted school, company and achievement logos.
 - `assets/fonts/` contains the self-hosted font and its redistribution licence.
 
 ## Local preview

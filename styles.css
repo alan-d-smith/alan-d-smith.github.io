@@ -229,9 +229,9 @@ a:focus-visible {
 .timeline::before,
 .timeline::after {
   position: absolute;
-  top: 10px;
+  top: 16px;
   bottom: 0;
-  left: 3px;
+  left: 16px;
   width: 1px;
   background: var(--line);
   content: "";
@@ -243,24 +243,34 @@ a:focus-visible {
 
 .timeline-item {
   position: relative;
-  padding-left: 28px;
+  padding-left: 48px;
 }
 
 .timeline-item + .timeline-item {
   margin-top: 48px;
 }
 
-.timeline-item::before {
+.timeline-item .org-logo {
   position: absolute;
   z-index: 1;
-  top: 9px;
+  top: 0;
   left: 0;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--dot);
   box-shadow: 0 0 0 5px var(--black);
-  content: "";
+}
+
+/* School and company logos: grey until their row is hovered. */
+.org-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  filter: grayscale(1) brightness(0.8);
+  object-fit: contain;
+  transition: filter 200ms ease;
+}
+
+.org-logo-tile {
+  padding: 2px;
+  background: #f2f2f2;
 }
 
 .roles {
@@ -439,6 +449,11 @@ a:focus-visible {
 }
 
 @media (hover: hover) {
+  .timeline-item:hover .org-logo,
+  .row:hover .org-logo {
+    filter: none;
+  }
+
   .tile:hover::before {
     opacity: 1;
   }
@@ -508,7 +523,8 @@ a:focus-visible {
 
 .row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: start;
   gap: 16px;
 }
 
@@ -539,6 +555,10 @@ a:focus-visible {
   color: var(--text);
 }
 
+.ledger dd {
+  text-wrap: pretty;
+}
+
 /* Achievements: logos stay grey until their link is hovered or focused. */
 .awards {
   gap: 10px;
@@ -547,7 +567,7 @@ a:focus-visible {
 .awards a {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   text-decoration-color: var(--line);
 }
 
@@ -558,6 +578,7 @@ a:focus-visible {
 .awards img {
   flex: none;
   width: 20px;
+  margin-inline: 6px;
   height: 20px;
   filter: grayscale(1) brightness(1.5);
   object-fit: contain;
@@ -733,6 +754,7 @@ a:focus-visible {
   .tile::before,
   .shot,
   .plot,
+  .org-logo,
   .awards img {
     transition: none;
   }
@@ -792,8 +814,18 @@ a:focus-visible {
     gap: 0;
   }
 
+  .row {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 0 16px;
+  }
+
+  .row-date {
+    grid-column: 2;
+    margin-top: 2px;
+  }
+
   .awards dd {
-    padding-left: 30px;
+    padding-left: 48px;
   }
 }
 
