@@ -1,7 +1,4 @@
-const menuButton = document.querySelector(".menu-button");
-const navigation = document.querySelector(".site-nav");
 const projectImages = window.PORTFOLIO_CONFIG?.projectImages ?? {};
-const mobileNavigation = window.matchMedia("(max-width: 680px)");
 
 function applyProjectImageConfiguration() {
   document.querySelectorAll("[data-project-image]").forEach((image) => {
@@ -22,40 +19,19 @@ function applyProjectImageConfiguration() {
   });
 }
 
-function setMenuOpen(isOpen) {
-  if (!menuButton || !navigation) {
-    return;
-  }
-
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.textContent = isOpen ? "Close" : "Menu";
-  navigation.classList.toggle("open", isOpen);
+// Moves each project tile's spotlight to the pointer. The CSS centres it without JavaScript.
+function trackTileSpotlights() {
+  document.querySelectorAll(".tile").forEach((tile) => {
+    tile.addEventListener("pointermove", (event) => {
+      const bounds = tile.getBoundingClientRect();
+      tile.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
+      tile.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
+    });
+  });
 }
 
-menuButton?.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  setMenuOpen(!isOpen);
-});
-
-navigation?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => setMenuOpen(false));
-});
-
-document.addEventListener("keydown", (event) => {
-  if (
-    event.key !== "Escape" ||
-    menuButton?.getAttribute("aria-expanded") !== "true"
-  ) {
-    return;
-  }
-
-  setMenuOpen(false);
-  menuButton.focus();
-});
-
-mobileNavigation.addEventListener("change", () => setMenuOpen(false));
-
 applyProjectImageConfiguration();
+trackTileSpotlights();
 
 const year = document.querySelector("#year");
 if (year) {

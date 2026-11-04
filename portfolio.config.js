@@ -3,8 +3,8 @@
 window.PORTFOLIO_CONFIG = {
   projectImages: {
     waffleos: {
-      src: "assets/waffleos.png",
-      alt: "WaffleOS graphical interface",
+      src: "assets/waffleos.png?v=20261104-1",
+      alt: "WaffleOS desktop with Notepad and Terminal windows open",
       fit: "contain",
       position: "center",
     },
@@ -12,7 +12,7 @@ window.PORTFOLIO_CONFIG = {
       src: "assets/ctrader.png",
       alt: "CTrader real-time market data interface",
       fit: "contain",
-      position: "top center",
+      position: "center",
     },
     mnistAccuracy: {
       src: "assets/mnist-accuracy.png",
@@ -21,14 +21,14 @@ window.PORTFOLIO_CONFIG = {
       position: "center",
     },
     mnistDigits: {
-      src: "assets/mnist-digits.png",
-      alt: "MNIST handwritten digit samples labelled zero through nine",
+      src: "assets/mnist-digits.png?v=20261104-1",
+      alt: "MNIST handwritten digit samples, zero through nine",
       fit: "contain",
       position: "center",
     },
     mnistSurface: {
       src: "assets/mnist-surface.png",
-      alt: "Visualisation of gradient descent paths across an optimisation surface",
+      alt: "Gradient descent paths across an optimisation surface",
       fit: "contain",
       position: "center",
     },

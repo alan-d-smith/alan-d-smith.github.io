@@ -7,10 +7,11 @@ Personal portfolio for Alan Smith, built as a dependency-free static site for Gi
 - `index.html` contains the site content and semantic page structure.
 - `privacy.html` and `datenschutz.html` contain the operator’s legal contact details and describe hosting, contact handling and visitors’ privacy rights in English and German.
 - `styles.css` contains the complete visual system and responsive layouts.
-- `script.js` handles the mobile navigation, image configuration, and footer year.
+- `script.js` handles image configuration, the project tile spotlight, and the footer year.
 - `portfolio.config.js` provides a single place to update project imagery.
-- `assets/` contains locally hosted project and social images.
-- `assets/fonts/` contains self-hosted fonts and their redistribution licences.
+- `assets/` contains locally hosted project images.
+- `assets/logos/` contains locally hosted achievement logos.
+- `assets/fonts/` contains the self-hosted font and its redistribution licence.
 
 ## Local preview
 
@@ -50,10 +51,10 @@ git diff --check
 
 The repository is designed to be served directly from the root of the `main` branch with GitHub Pages. No build command or generated output directory is required.
 
-Static asset URLs in the HTML pages include a deployment revision query. Update the affected revisions whenever CSS or JavaScript changes so browsers cannot combine new markup with stale assets after a GitHub Pages deployment.
+Static asset URLs in the HTML pages include a deployment revision query. Update the affected revisions whenever CSS, JavaScript or a replaced image changes so browsers cannot combine new markup with stale assets after a GitHub Pages deployment. Replaced images need the revision in both `index.html` and `portfolio.config.js`.
 
 ## Copyright
 
 © Alan Smith. All rights reserved. Third-party trademarks and logos remain the property of their respective owners.
 
-The fonts have separate SIL Open Font License terms in `assets/fonts/`. The copyright notice does not establish permission for third-party logos or screenshots; retain the relevant licences or permissions for those assets.
+The font has separate SIL Open Font License terms in `assets/fonts/`. The copyright notice does not establish permission for third-party logos or screenshots; retain the relevant licences or permissions for those assets.
