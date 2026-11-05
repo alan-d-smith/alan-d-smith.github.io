@@ -258,14 +258,12 @@ a:focus-visible {
   box-shadow: 0 0 0 5px var(--black);
 }
 
-/* School and company logos: grey until their row is hovered. */
+/* School and company logos stay in full colour. */
 .org-logo {
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  filter: grayscale(1) brightness(0.8);
   object-fit: contain;
-  transition: filter 200ms ease;
 }
 
 .org-logo-tile {
@@ -449,11 +447,6 @@ a:focus-visible {
 }
 
 @media (hover: hover) {
-  .timeline-item:hover .org-logo,
-  .row:hover .org-logo {
-    filter: none;
-  }
-
   .tile:hover::before {
     opacity: 1;
   }
@@ -754,7 +747,6 @@ a:focus-visible {
   .tile::before,
   .shot,
   .plot,
-  .org-logo,
   .awards img {
     transition: none;
   }
