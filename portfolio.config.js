@@ -32,5 +32,12 @@ window.PORTFOLIO_CONFIG = {
       fit: "contain",
       position: "center",
     },
+    latch: {
+      src: "assets/latch.png",
+      alt: "Latch unlock screen asking a Spanish question before Instagram opens",
+      fit: "contain",
+      // The phone is cropped at the image's bottom edge, so keep that edge on the frame's.
+      position: "center bottom",
+    },
   },
 };
