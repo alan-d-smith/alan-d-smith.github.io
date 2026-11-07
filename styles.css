@@ -387,10 +387,33 @@ a:focus-visible {
 }
 
 .tile-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
   margin-top: auto;
   padding-top: 12px;
   color: var(--text);
   font-size: 0.875rem;
+}
+
+/* A real install command, so it gets a code face from the visitor's system fonts. */
+.tile-install {
+  margin-top: 12px;
+}
+
+.tile-install code {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--black);
+  color: var(--text);
+  font:
+    0.8125rem/1.5 ui-monospace,
+    "SF Mono",
+    Menlo,
+    Consolas,
+    monospace;
+  user-select: all;
 }
 
 .tile-wide,
