@@ -435,14 +435,11 @@ a:focus-visible {
   margin: 8px 8px 8px 0;
 }
 
-/* Greyscale at rest so the page stays monochrome; colour answers the pointer. */
 .shot {
   width: 100%;
   height: 100%;
-  filter: grayscale(1) brightness(0.8);
   object-fit: var(--image-fit, contain);
   object-position: var(--image-position, center);
-  transition: filter 300ms ease;
 }
 
 .plots {
@@ -452,12 +449,12 @@ a:focus-visible {
   padding: 12px;
 }
 
+/* Inverted to sit on the dark tile; the hue rotation restores the original line colours. */
 .plot {
   width: 100%;
-  filter: invert(1) grayscale(1);
+  filter: invert(1) hue-rotate(180deg);
   object-fit: var(--image-fit, contain);
   object-position: var(--image-position, center);
-  transition: filter 300ms ease;
 }
 
 .digits {
@@ -468,16 +465,6 @@ a:focus-visible {
 @media (hover: hover) {
   .tile:hover::before {
     opacity: 1;
-  }
-
-  .tile:hover .shot,
-  .tile:focus-within .shot {
-    filter: none;
-  }
-
-  .tile:hover .plot,
-  .tile:focus-within .plot {
-    filter: invert(1) hue-rotate(180deg);
   }
 }
 
@@ -592,18 +579,7 @@ a:focus-visible {
   width: 20px;
   margin-inline: 6px;
   height: 20px;
-  filter: grayscale(1) brightness(1.5);
   object-fit: contain;
-  opacity: 0.8;
-  transition:
-    filter 200ms ease,
-    opacity 200ms ease;
-}
-
-.awards a:hover img,
-.awards a:focus-visible img {
-  filter: none;
-  opacity: 1;
 }
 
 .site-footer {
@@ -763,10 +739,7 @@ a:focus-visible {
   }
 
   a,
-  .tile::before,
-  .shot,
-  .plot,
-  .awards img {
+  .tile::before {
     transition: none;
   }
 }
