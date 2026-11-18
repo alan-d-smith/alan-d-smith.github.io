@@ -40,7 +40,7 @@ Apply the published retention policy to portfolio messages: review and delete co
 The site has no runtime dependencies. Before committing, validate and format the source with:
 
 ```bash
-npx --yes prettier@3.5.3 --check index.html privacy.html datenschutz.html styles.css script.js portfolio.config.js README.md assets/fonts/README.md .htmlvalidate.json
+npx --yes prettier@3.5.3 --check index.html privacy.html datenschutz.html styles.css script.js portfolio.config.js README.md assets/fonts/README.md .htmlvalidate.json vercel.json
 npx --yes html-validate index.html privacy.html datenschutz.html
 node --check script.js
 node --check portfolio.config.js
@@ -50,6 +50,8 @@ git diff --check
 ## Deployment
 
 The repository is designed to be served directly from the root of the `main` branch with GitHub Pages. No build command or generated output directory is required.
+
+The same files are also deployed to Vercel. `vercel.json` sets `"framework": null`, which overrides the Vercel project's framework preset so the repository is always served as static files rather than built as a server.
 
 Static asset URLs in the HTML pages include a deployment revision query. Update the affected revisions whenever CSS, JavaScript or a replaced image changes so browsers cannot combine new markup with stale assets after a GitHub Pages deployment. Replaced images need the revision in both `index.html` and `portfolio.config.js`.
 
