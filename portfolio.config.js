@@ -33,7 +33,7 @@ window.PORTFOLIO_CONFIG = {
       position: "center",
     },
     latch: {
-      src: "assets/latch.png",
+      src: "assets/latch.png?v=20261118-1",
       alt: "Latch unlock screen asking a Spanish question before Instagram opens",
       fit: "contain",
       // The phone is cropped at the image's bottom edge, so keep that edge on the frame's.
